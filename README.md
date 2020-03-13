@@ -8,8 +8,8 @@ Installation
 ------------
 
 1.  Ensure you have python3 installed
-2.  Clone the repository `git clone https://github.com/Jchinonso/data_wragler.git`
-3.  Change your directory `cd data_wragler.git`
+2.  Clone the repository `git clone https://github.com/Jchinonso/data_wrangler_python.git`
+3.  Change your directory `cd data_wrangler_python.git`
 4.  Install dependencies
     ```
     $ pip3 install beautifulsoup4
