@@ -1,6 +1,6 @@
 # data_wrangler_python
 
-Data scapping exercise for daily prices and monthly prices
+Data wrangling exercise for daily prices and monthly prices
 https://www.eia.gov/dnav/ng/hist/rngwhhdm.htm
 
 
