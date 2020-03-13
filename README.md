@@ -10,7 +10,7 @@ Installation
 1.  Ensure you have python3 installed
 2.  Clone the repository `git clone https://github.com/Jchinonso/data_wragler.git`
 3.  Change your directory `cd data_wragler.git`
-4.  # Install dependencies
+4.  Install dependencies
     ```
     $ pip3 install beautifulsoup4
     $ pip3 install html5lib
