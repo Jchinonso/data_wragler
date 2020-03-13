@@ -46,6 +46,7 @@ class GasPriceClass:
                 daily_prices.append(
                     [date, [item.text for item in row.find_all('td', class_='B3')]])
         self.daily_prices = self.assign_price_to_date(daily_prices)
+        self.daily_prices.reverse()
 
     def get_monthly_prices(self):
         """
