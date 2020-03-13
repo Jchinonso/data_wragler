@@ -14,12 +14,9 @@ class GasPriceClass:
         self.daily_prices = []
         self.monthly_prices = []
 
-    def loadHtml(self):
-        self.get_html()
-
-    def get_html(self):
+    def load_html(self):
         """
-          retrieve records form web page 
+          retrieve html form web page 
           :return void
         """
         try:
@@ -70,8 +67,8 @@ class GasPriceClass:
         if(os.path.exists(file_name)):
             print('File Already Exist')
         with open(file_name, 'w', newline='') as file:
-            file.write('Date, Price \n')
             writer = csv.writer(file)
+            writer.writerow(['Date', 'Price'])
             for item in data:
                 writer.writerow(item)
 
@@ -95,13 +92,16 @@ class GasPriceClass:
                 increment_day += 1
         return date_price_array
 
+    def run(self):
+        self.load_html()
+        self.get_monthly_prices()
+        self.create_csv('csv/daily_prices.csv', self.daily_prices)
+        self.create_csv('csv/monthly_prices.csv', self.monthly_prices)
+
 
 def main():
-    g = GasPriceClass()
-    g.loadHtml()
-    g.get_monthly_prices()
-    g.create_csv('csv/daily_prices.csv', g.daily_prices)
-    g.create_csv('csv/monthly_prices.csv', g.monthly_prices)
+    gas_price = GasPriceClass()
+    gas_price.run()
 
 
 if __name__ == '__main__':
