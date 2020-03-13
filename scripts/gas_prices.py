@@ -43,7 +43,8 @@ class GasPriceClass:
             all_date = row.find('td', {'class': 'B6'})
             if all_date:
                 date = all_date.text.strip()
-                daily_prices.append([date, [item.text for item in row.find_all('td', class_='B3')]])
+                daily_prices.append(
+                    [date, [item.text for item in row.find_all('td', class_='B3')]])
         self.daily_prices = self.assign_price_to_date(daily_prices)
 
     def get_monthly_prices(self):
@@ -57,9 +58,9 @@ class GasPriceClass:
             first_day_of_month = int(data[0].split('-')[2])
             if(first_day_of_month == 1):
                 month = data[0][0: 8]
-                monthly_prices.append([month, data[1] ])
+                monthly_prices.append([month, data[1]])
         self.monthly_prices = monthly_prices
-            
+
     def create_csv(self, file_name, data):
         """
           create csv file  
@@ -70,11 +71,10 @@ class GasPriceClass:
         with open(file_name, 'w', newline='') as file:
             file.write('DATE, PRICE \n')
             writer = csv.writer(file)
-            for item in data: 
+            for item in data:
                 writer.writerow(item)
 
     def assign_price_to_date(self, data):
-
         """
           extract each day from date and assign 
           price to each day
@@ -82,15 +82,17 @@ class GasPriceClass:
         """
         date_price_array = []
         for item in data:
-            start_date = item[0].replace('- ',' ').replace('-', ' ').split(' ')[0:3]
-            format_start_date = datetime.datetime.strptime('-'.join(start_date), '%Y-%b-%d')
+            start_date = item[0].replace(
+                '- ', ' ').replace('-', ' ').split(' ')[0:3]
+            format_start_date = datetime.datetime.strptime(
+                '-'.join(start_date), '%Y-%b-%d')
             increment_day = 0
             for price in item[1]:
-                day = format_start_date + datetime.timedelta(days = increment_day)
+                day = format_start_date + \
+                    datetime.timedelta(days=increment_day)
                 date_price_array.append([day.strftime('%Y-%b-%d'), price])
                 increment_day += 1
         return date_price_array
-
 
 
 def main():
