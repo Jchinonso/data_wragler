@@ -70,7 +70,7 @@ class GasPriceClass:
         if(os.path.exists(file_name)):
             print('File Already Exist')
         with open(file_name, 'w', newline='') as file:
-            file.write('DATE, PRICE \n')
+            file.write('Date, Price \n')
             writer = csv.writer(file)
             for item in data:
                 writer.writerow(item)
