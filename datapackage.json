@@ -1,0 +1,55 @@
+{
+  "profile": "tabular-data-package",
+  "resources": [
+    {
+      "name": "monthly prices",
+      "path": "csv/monthly_prices.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "DATE",
+            "type": "string"
+          },
+          {
+            "name": "PRICE",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "daily prices",
+      "path": "csv/daily_prices.csv",
+      "profile": "tabular-data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "DATE",
+            "type": "string"
+          },
+          {
+            "name": "PRICE",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ],
+  "description": "A wrangler exercise",
+  "contributors": [
+    {
+      "title": "Chinonso",
+      "role": "author"
+    }
+  ],
+  "licenses": [
+    {
+      "name": "CC0-1.0",
+      "title": "CC0 1.0",
+      "path": "https://creativecommons.org/publicdomain/zero/1.0/"
+    }
+  ],
+  "title": "data_wragler_python",
+  "name": "data_wragler_python"
+}
