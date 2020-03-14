@@ -94,9 +94,10 @@ class GasPriceClass:
 
     def run(self):
         self.load_html()
-        self.get_monthly_prices()
-        self.create_csv('csv/daily_prices.csv', self.daily_prices)
-        self.create_csv('csv/monthly_prices.csv', self.monthly_prices)
+        if(self.table_data):
+          self.get_monthly_prices()
+          self.create_csv('csv/daily_prices.csv', self.daily_prices)
+          self.create_csv('csv/monthly_prices.csv', self.monthly_prices)
 
 
 def main():
