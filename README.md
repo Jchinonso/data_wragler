@@ -13,7 +13,6 @@ Installation
 4.  Install dependencies
     ```
     $ pip3 install beautifulsoup4
-    $ pip3 install html5lib
     $ pip3 install requests
     ```
 5. Run script with this command `python3 scripts/gas_prices.py`
